@@ -1,7 +1,9 @@
-package com.lsukev.herome;
+package com.lsukev.herome.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.lsukev.herome.R;
 
 public class MainActivity extends AppCompatActivity {
 
