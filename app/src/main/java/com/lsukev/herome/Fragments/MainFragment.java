@@ -101,7 +101,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        btnChoose.setEnabled(false);
+        btnChoose.setEnabled(true);
         btnChoose.getBackground().setAlpha(255);
 
         btnAccident.setCompoundDrawablesWithIntrinsicBounds(R.drawable.lightning_icon,0,0,0);
