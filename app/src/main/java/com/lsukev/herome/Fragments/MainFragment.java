@@ -4,11 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.lsukev.herome.Activities.MainActivity;
 import com.lsukev.herome.R;
 
 /**
@@ -81,6 +83,15 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnBorn.setOnClickListener(this);
         btnGenetic.setOnClickListener(this);
 
+        btnChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity)getActivity();
+                mainActivity.loadPickPowerScreen();
+            }
+        });
+
+
         btnChoose.setEnabled(false);
         btnChoose.getBackground().setAlpha(128);
 
@@ -93,12 +104,14 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnChoose.setEnabled(false);
         btnChoose.getBackground().setAlpha(255);
 
-        Button btn = (Button)v;
-        int leftDrawable = 0;
-
         btnAccident.setCompoundDrawablesWithIntrinsicBounds(R.drawable.lightning_icon,0,0,0);
         btnBorn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.atomic_icon,0,0,0);
         btnGenetic.setCompoundDrawablesWithIntrinsicBounds(R.drawable.rocket_icon,0,0,0);
+
+        Button btn = (Button)v;
+        int leftDrawable = 0;
+
+
 
         if (btn == btnAccident){
             leftDrawable = R.drawable.lightning_icon;

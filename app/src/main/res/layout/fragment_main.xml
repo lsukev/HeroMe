@@ -41,11 +41,10 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:drawableLeft="@drawable/lightning_icon"
             android:paddingLeft="5dp"
-            android:paddingRight="15dp"
-            android:layout_marginBottom="5dp"></Button>
+            android:paddingRight="15dp" />
 
         <Button
             android:layout_width="300dp"
@@ -58,8 +57,7 @@
             android:layout_marginTop="15dp"
             android:drawableLeft="@drawable/rocket_icon"
             android:paddingLeft="5dp"
-            android:paddingRight="15dp"
-            android:layout_marginBottom="5dp" />
+            android:paddingRight="15dp" />
 
         <Button
             android:layout_width="300dp"
@@ -72,8 +70,7 @@
             android:layout_marginTop="15dp"
             android:drawableLeft="@drawable/atomic_icon"
             android:paddingLeft="5dp"
-            android:paddingRight="15dp"
-            android:layout_marginBottom="5dp" />
+            android:paddingRight="15dp" />
 
         <Button
             android:layout_width="300dp"
@@ -85,8 +82,7 @@
             android:textColor="#10161D"
             android:layout_marginTop="15dp"
             android:paddingLeft="5dp"
-            android:paddingRight="15dp"
-            android:layout_marginBottom="5dp"
+            android:paddingRight="10dp"
             android:backgroundTint="#FAC740"
             android:textSize="22dp" />
 
