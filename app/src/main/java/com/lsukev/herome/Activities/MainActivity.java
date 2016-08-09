@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
     public void loadPickPowerScreen() {
 
         PickPowerFragment pickPowerFragment = new PickPowerFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, pickPowerFragment).addToBackStack(null).commit();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, pickPowerFragment).addToBackStack(null).commit();
 
     }
