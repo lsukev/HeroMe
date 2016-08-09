@@ -7,18 +7,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.lsukev.herome.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MainFragment.OnFragmentInteractionListener} interface
+ * {@link MainFragment.MainFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link MainFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,7 +29,12 @@ public class MainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    private Button btnAccident;
+    private Button btnGenetic;
+    private Button btnBorn;
+    private Button btnChoose;
+
+    private MainFragmentInteractionListener mListener;
 
     public MainFragment() {
         // Required empty public constructor
@@ -64,22 +70,59 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        btnAccident = (Button)view.findViewById(R.id.btnAccident);
+        btnBorn = (Button)view.findViewById(R.id.btnBorn);
+        btnChoose = (Button)view.findViewById(R.id.btnChoose);
+        btnGenetic = (Button)view.findViewById(R.id.btnGenetic);
+
+        btnAccident.setOnClickListener(this);
+        btnBorn.setOnClickListener(this);
+        btnGenetic.setOnClickListener(this);
+
+        btnChoose.setEnabled(false);
+        btnChoose.getBackground().setAlpha(128);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        btnChoose.setEnabled(false);
+        btnChoose.getBackground().setAlpha(255);
+
+        Button btn = (Button)v;
+        int leftDrawable = 0;
+
+        btnAccident.setCompoundDrawablesWithIntrinsicBounds(R.drawable.lightning_icon,0,0,0);
+        btnBorn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.atomic_icon,0,0,0);
+        btnGenetic.setCompoundDrawablesWithIntrinsicBounds(R.drawable.rocket_icon,0,0,0);
+
+        if (btn == btnAccident){
+            leftDrawable = R.drawable.lightning_icon;
+        } else if (btn == btnBorn){
+            leftDrawable = R.drawable.atomic_icon;
+        } else if (btn == btnGenetic){
+            leftDrawable=R.drawable.rocket_icon;
+        }
+
+        btn.setCompoundDrawablesWithIntrinsicBounds(leftDrawable,0,R.drawable.item_selected_btn,0);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onMainFragmentInteraction(uri);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof MainFragmentInteractionListener) {
+            mListener = (MainFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -102,8 +145,8 @@ public class MainFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
+    public interface MainFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onMainFragmentInteraction(Uri uri);
     }
 }
