@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
 
+import com.lsukev.herome.Fragments.HeroMeFragment;
 import com.lsukev.herome.Fragments.MainFragment;
 import com.lsukev.herome.Fragments.PickPowerFragment;
 import com.lsukev.herome.R;
 
-public class MainActivity extends AppCompatActivity implements MainFragment.MainFragmentInteractionListener, PickPowerFragment.PickPowerInteractionListener {
+public class MainActivity extends AppCompatActivity implements MainFragment.MainFragmentInteractionListener, PickPowerFragment.PickPowerInteractionListener, HeroMeFragment.HeroMeFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
 
     }
 
+    public void loadHeroMeScreen(){
+
+        HeroMeFragment heroMeFragment = new HeroMeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, heroMeFragment).addToBackStack(null).commit();
+
+    }
+
     @Override
     public void onMainFragmentInteraction(Uri uri) {
 
@@ -44,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
 
     @Override
     public void onPickPowerFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onHeroMeFragmentInteraction(Uri uri) {
 
     }
 }

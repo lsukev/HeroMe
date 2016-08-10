@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lsukev.herome.Fragments.HeroMeFragment"
+    android:background="@drawable/hero_bg_gradient">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/hero_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="SUPERMAN"
+            android:id="@+id/lblHeroName"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#FFD200" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgHeroIcon"
+                android:src="@drawable/supermancrest_big"
+                android:layout_weight="1"
+                android:baselineAlignBottom="false"
+                android:cropToPadding="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="BACKSTORY"
+                android:id="@+id/textView3"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="This is a whole bunch of text about some dumb hero that got his powers some dumb stupid way. Now I have to fill in a bunch of dumb stupid text for this dumb stupid program.This is a whole bunch of text about some dumb hero that got his powers some dumb stupid way. Now I have to fill in a bunch of dumb stupid text for this dumb stupid program."
+            android:id="@+id/textView4"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:background="@drawable/hero_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:padding="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="PRIMARY POWER"
+            android:id="@+id/textView5"
+            android:textSize="17dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:layout_width="375dp"
+            android:layout_height="55dp"
+            android:text="Flight"
+            android:id="@+id/btnPrimaryPower"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/hero_button"
+            android:textColor="#FAC740"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:drawableLeft="@drawable/supermancrest_icon"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="SECONDARY POWER"
+            android:id="@+id/textView6"
+            android:textSize="17dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:layout_width="375dp"
+            android:layout_height="55dp"
+            android:text="Super Strength"
+            android:id="@+id/btnSecondaryPower"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/hero_button"
+            android:textColor="#FAC740"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:drawableLeft="@drawable/superstrength_icon"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp" />
+
+        <Button
+            android:layout_width="375dp"
+            android:layout_height="55dp"
+            android:text="START OVER"
+            android:id="@+id/btnStartOver"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#10161D"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:background="@drawable/hero_solid_button"
+            android:backgroundTint="#FAC740" />
+
+    </LinearLayout>
+</FrameLayout>

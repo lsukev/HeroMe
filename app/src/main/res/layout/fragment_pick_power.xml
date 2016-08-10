@@ -11,7 +11,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|top">
+        android:layout_gravity="center_horizontal|top"
+        android:background="@drawable/hero_button">
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,10 +34,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:drawableLeft="@drawable/turtlepower_icon"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp" />
 
         <Button
             android:layout_width="375dp"
@@ -46,10 +49,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/thorshammer_icon" />
 
         <Button
             android:layout_width="375dp"
@@ -59,10 +64,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/supermancrest_icon" />
 
         <Button
             android:layout_width="375dp"
@@ -72,10 +79,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/spiderweb_icon" />
 
         <Button
             android:layout_width="375dp"
@@ -85,10 +94,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/laservision_icon" />
 
         <Button
             android:layout_width="375dp"
@@ -98,10 +109,12 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_button"
             android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="25dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="15dp"
+            android:drawableLeft="@drawable/superstrength_icon" />
 
         <Button
             android:layout_width="375dp"
@@ -110,10 +123,10 @@
             android:id="@+id/btnBackStory"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/hero_solid_button"
-            android:textColor="#FAC740"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
-            android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="22dp"
+            android:textColor="#10161D"
+            android:backgroundTint="#FAC740" />
     </LinearLayout>
 </FrameLayout>

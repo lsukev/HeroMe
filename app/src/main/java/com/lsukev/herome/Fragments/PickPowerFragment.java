@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.lsukev.herome.Activities.MainActivity;
 import com.lsukev.herome.R;
 
 /**
@@ -18,7 +20,7 @@ import com.lsukev.herome.R;
  * Use the {@link PickPowerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PickPowerFragment extends Fragment {
+public class PickPowerFragment extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,6 +29,15 @@ public class PickPowerFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Button btnTurtlePower;
+    private Button btnLightning;
+    private Button btnFlight;
+    private Button btnWebSlinging;
+    private Button btnLaserVision;
+    private Button btnSuperStrength;
+    private Button btnBackStory;
+
 
     private PickPowerInteractionListener mListener;
 
@@ -64,8 +75,69 @@ public class PickPowerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_pick_power, container, false);
+        btnTurtlePower = (Button)view.findViewById(R.id.btnTurtlePower);
+        btnLightning = (Button)view.findViewById(R.id.btnLightning);
+        btnFlight = (Button)view.findViewById(R.id.btnFlight);
+        btnWebSlinging = (Button)view.findViewById(R.id.btnWebSlinging);
+        btnLaserVision = (Button)view.findViewById(R.id.btnLaserVision);
+        btnSuperStrength = (Button)view.findViewById(R.id.btnSuperStrength);
+        btnBackStory = (Button)view.findViewById(R.id.btnBackStory);
+
+        btnTurtlePower.setOnClickListener(this);
+        btnLightning.setOnClickListener(this);
+        btnFlight.setOnClickListener(this);
+        btnWebSlinging.setOnClickListener(this);
+        btnLaserVision.setOnClickListener(this);
+        btnSuperStrength.setOnClickListener(this);
+
+        btnBackStory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity)getActivity();
+                mainActivity.loadHeroMeScreen();
+            }
+        });
+
+        btnBackStory.setEnabled(false);
+        btnBackStory.getBackground().setAlpha(128);
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pick_power, container, false);
+        return view;
+    }
+
+    @Override
+    public void onClick(View v){
+        btnBackStory.setEnabled(true);
+        btnBackStory.getBackground().setAlpha(255);
+
+        btnTurtlePower.setCompoundDrawablesWithIntrinsicBounds(R.drawable.turtlepower_icon,0,0,0);
+        btnLightning.setCompoundDrawablesWithIntrinsicBounds(R.drawable.thorshammer_icon,0,0,0);
+        btnFlight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.supermancrest_icon,0,0,0);
+        btnWebSlinging.setCompoundDrawablesWithIntrinsicBounds(R.drawable.spiderweb_icon,0,0,0);
+        btnLaserVision.setCompoundDrawablesWithIntrinsicBounds(R.drawable.laservision_icon,0,0,0);
+        btnSuperStrength.setCompoundDrawablesWithIntrinsicBounds(R.drawable.superstrength_icon,0,0,0);
+
+        Button btn = (Button)v;
+        int leftDrawable = 0;
+
+        if (btn == btnTurtlePower){
+            leftDrawable = R.drawable.turtlepower_icon;
+        } else if (btn == btnLightning){
+            leftDrawable = R.drawable.thorshammer_icon;
+        }else if (btn == btnFlight){
+            leftDrawable = R.drawable.supermancrest_icon;
+        }else if (btn == btnWebSlinging){
+            leftDrawable = R.drawable.spiderweb_icon;
+        }else if (btn == btnLaserVision){
+            leftDrawable = R.drawable.laservision_icon;
+        }else if (btn == btnSuperStrength){
+            leftDrawable = R.drawable.superstrength_icon;
+        }
+
+        btn.setCompoundDrawablesWithIntrinsicBounds(leftDrawable,0,R.drawable.item_selected_btn,0);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
